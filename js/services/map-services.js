@@ -1,8 +1,12 @@
+import { storageService } from './async-storage.service.js'
+import { locService } from './location-services.js'
+
 export const mapService = {
     initMap,
     addMarker,
     panTo
 }
+
 
 
 // Var that is used throughout this Module (not global)
@@ -20,7 +24,7 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             })
             gMap.addListener("click", (mapsMouseEvent) => {
                 const position = mapsMouseEvent.latLng.toJSON()
-                console.log(position);
+                locService.createLocation(position, 'selected location :')
             })
             console.log('Map!', gMap)
         })

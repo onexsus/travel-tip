@@ -1,6 +1,13 @@
+import { storageService } from "./async-storage.service"
+
+
 export const locService = {
-    getLocs
+    getLocs,
+    createLocation
 }
+
+const LOCATION_KEY = 'LOCATION_DB'
+
 
 
 const locs = [
@@ -14,4 +21,16 @@ function getLocs() {
             resolve(locs)
         }, 2000)
     })
+}
+
+
+function createLocation(location, name) {
+    var loc = {
+        name,
+        lat: location.lat,
+        lng: location.lng,
+        createAt: Date.now(),
+        updatedAt: Date.now()
+    }
+    storageService.post(LOCATION_KEY, loc)
 }
