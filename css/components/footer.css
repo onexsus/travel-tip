@@ -1,0 +1,46 @@
+/* main-footer
+logo-footer
+social-links
+dropbox
+githube
+google-maps
+weather */
+
+.main-footer{
+  align-self: flex-end;
+  background-color: rgb(114, 61, 0);
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.main-footer .logo-footer{
+  margin-bottom: 1em;
+width: 300px;
+}
+.main-footer small{
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+.main-footer img{
+width: 100%;
+}
+.main-footer .social-links {
+  width:300px ;
+  justify-content: space-around;
+}
+.main-footer .social-links img{
+  height: 50px;
+  width: 50px;
+  background-color:rgb(189, 101, 0) ;
+  opacity: 0.5;
+  border-radius: 10px;
+  transition: all 400ms;
+  /* margin-bottom: 1em; */
+  
+}
+.main-footer .social-links img:hover{
+
+  background-color:rgb(233, 233, 233) ;
+  opacity: 1;
+  
+}
