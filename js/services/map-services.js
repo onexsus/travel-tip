@@ -37,7 +37,7 @@ function addMarker(loc) {
         map: gMap,
         title: 'Hello World!'
     })
-     marker.setMap(gMap)
+    marker.setMap(gMap)
 }
 
 function panTo(lat, lng) {
