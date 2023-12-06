@@ -1,0 +1,11 @@
+.main-layout{
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  background-color: lightgray;
+}
+.main-layout > .full {
+  grid-column: 1 / -1;
+}
+.main-layout > *:not(.full) {
+  grid-column: 2;
+}
