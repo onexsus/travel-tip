@@ -1,6 +1,10 @@
 import { locService } from './services/location-services.js'
 import { mapService } from './services/map-services.js'
 
+export const mainController = {
+    onGetLocs
+}
+
 window.onload = onInit
 window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo

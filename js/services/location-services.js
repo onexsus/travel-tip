@@ -1,5 +1,5 @@
 import { storageService } from "./async-storage.service.js"
-
+import { mainController } from "../main.controller.js"
 
 export const locService = {
     getLocs,
@@ -16,7 +16,7 @@ const locs = [
 ]
 
 function getLocs() {
-    let location= storageService.query(LOCATION_KEY).then(res=>res.length===0? locs:res)
+    let location = storageService.query(LOCATION_KEY).then(res => res.length === 0 ? locs : res)
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(location)
@@ -34,4 +34,5 @@ function createLocation(location, name) {
         updatedAt: Date.now()
     }
     storageService.post(LOCATION_KEY, loc)
+    mainController.onGetLocs()
 }
