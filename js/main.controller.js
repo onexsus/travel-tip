@@ -32,9 +32,9 @@ function getPosition() {
     })
 }
 
-function onAddMarker() {
+function onAddMarker({lat, lng}) {
     console.log('Adding a marker')
-    mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 })
+    mapService.addMarker({ lat: lat, lng: lng })
 }
 
 function onGetLocs() {
@@ -43,6 +43,7 @@ function onGetLocs() {
             const elLoc = document.querySelector('.locs')
             let strHtml = ''
             locs.forEach(pos => {
+                onAddMarker({lat: pos.lat, lng: pos.lng})
                 strHtml += `
                 <div class="card flex space-between">
                 <div class="card-info flex column ">
