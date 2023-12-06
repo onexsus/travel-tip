@@ -13,11 +13,13 @@ window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 window.onDeleteLocation = onDeleteLocation
 window.onSearchLocation = onSearchLocation
+window.onCopyUrl = onCopyUrl
 
 function onInit() {
     mapService.initMap()
         .then(() => {
             console.log('Map is ready')
+            renderQueryParams()
         })
         .catch(() => console.log('Error: cannot init map'))
 }
@@ -88,4 +90,29 @@ function onSearchLocation(ev) {
         locService.createLocation(res, value)
         onPanTo(res.lat, res.lng)
     })
+}
+
+function onCopyUrl() {
+   locService.getLocs().then(res=>{
+    res[res.length-1]
+    const queryParams = `?lat=${res[res.length-1].lat}&lng=${res[res.length-1].lng}`
+    const newUrl =
+    window.location.protocol + "//" +
+    window.location.host +
+    window.location.pathname + queryParams
+    window.history.pushState({ path: newUrl }, '', newUrl)
+    navigator.clipboard.writeText(newUrl)
+})
+}
+
+function renderQueryParams() {
+    const queryParams = new URLSearchParams(window.location.search)
+    const location = {
+        lat: queryParams.get('lat') || 0,
+        lng: +queryParams.get('lng') || 0
+    }
+     console.log(location.lat,location.lng)
+    if (!location.lat || !location.lng) return
+
+    onPanTo(location.lat , location.lng)
 }
