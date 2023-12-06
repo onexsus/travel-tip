@@ -10,6 +10,7 @@ window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
+window.onDeleteLocation = onDeleteLocation
 
 function onInit() {
     mapService.initMap()
@@ -35,10 +36,10 @@ function onAddMarker() {
 function onGetLocs() {
     locService.getLocs()
         .then(locs => {
-            const elLoc=document.querySelector('.locs')
-            let strHtml=''
+            const elLoc = document.querySelector('.locs')
+            let strHtml = ''
             locs.forEach(pos => {
-                strHtml+=`
+                strHtml += `
                 <div class="card flex space-between">
                 <div class="card-info flex column ">
                 <p>Name:${pos.name}</p>
@@ -47,11 +48,11 @@ function onGetLocs() {
                 </div>
                 <div class="btns-card flex column">
                 <button class="btn-go-card" onclick="onPanTo(${pos.lat}, ${pos.lng})"><img src="./img/icons/travel-svg.svg"></button>
-                <button class="btn-delete-card"><img src="./img/icons/trash-svg.svg"></button>
+                <button class="btn-delete-card" onclick="onDeleteLocation('${pos.id}')"><img src="./img/icons/trash-svg.svg"></button>
                 </div>
                 </div>`
             });
-            elLoc.innerHTML=strHtml
+            elLoc.innerHTML = strHtml
         })
 }
 
@@ -70,3 +71,9 @@ function onPanTo(lat, lng) {
     console.log('Panning the Map')
     mapService.panTo(lat, lng)
 }
+
+function onDeleteLocation(posId) {
+    var ans = confirm('Are you sure?')
+    if (ans) locService.deleteLocation(posId)
+}
+

@@ -3,7 +3,8 @@ import { mainController } from "../main.controller.js"
 
 export const locService = {
     getLocs,
-    createLocation
+    createLocation,
+    deleteLocation
 }
 
 const LOCATION_KEY = 'LOCATION_DB'
@@ -34,4 +35,8 @@ function createLocation(location, name) {
         updatedAt: Date.now()
     }
     storageService.post(LOCATION_KEY, loc).then(() => mainController.onGetLocs())
+}
+
+function deleteLocation(posId) {
+    return storageService.remove(LOCATION_KEY, posId).then(() => mainController.onGetLocs())
 }
