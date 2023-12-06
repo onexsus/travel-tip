@@ -6,7 +6,7 @@ btn-go-card
 btn-delete-card */
 
 .locs{
-  width: 200px;
+  width: 400px;
 }
 
 .card{
@@ -14,6 +14,8 @@ btn-delete-card */
   padding: 10px;
   border: 1px solid black;
   border-radius: 1em;
+  width: 300px;
+  margin-bottom: 1em;
   
 }
 
