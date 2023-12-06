@@ -1,10 +1,12 @@
 import { storageService } from "./async-storage.service.js"
 import { mainController } from "../main.controller.js"
 
+
 export const locService = {
     getLocs,
     createLocation,
-    deleteLocation
+    deleteLocation,
+    searchLocation
 }
 
 const LOCATION_KEY = 'LOCATION_DB'
@@ -39,4 +41,9 @@ function createLocation(location, name) {
 
 function deleteLocation(posId) {
     return storageService.remove(LOCATION_KEY, posId).then(() => mainController.onGetLocs())
+}
+
+function searchLocation(txt) {
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=|${txt}|&key=AIzaSyB0dUlJsQSAuB636Yc1NGBUaJbwvYjfS1s`
+    return axios.get(url).then(res => res.data.results[0].geometry.location)
 }

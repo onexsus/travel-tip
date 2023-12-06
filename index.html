@@ -13,7 +13,7 @@
   <header class="main-header flex align-center space-between full">
     <div class=header-logo><img src="./img/travel-logo.png" alt="travel trip logo"></div>
     <section class="header-btns-continer flex align-center space-between">
-      <form onsubmit="">
+      <form onsubmit="onSearchLocation(event)">
         <input type="text" name="location" placeholder="Enter location">
         <button class="input-btn"><img src="./img/icons/search-icon.svg"></button>
       </form>
@@ -32,13 +32,13 @@
     </section>
     <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
     <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo(35.6895, 139.6917)"class="btn-pan">Pan Map to Tokyo</button>
+    <button onclick="onPanTo(35.6895, 139.6917)" class="btn-pan">Pan Map to Tokyo</button>
 
     <p>You are at: <span class="user-pos"></span></p>
-    <h2>Locations: 
+    <h2>Locations:
     </h2>
     <section class="locs">
-  
+
     </section>
     <section>
     </section>
@@ -47,31 +47,28 @@
     <div class="logo-footer">
       <img src="./img/travel-logo.png">
     </div>
-    <small>Create by Boris Kho  Nave David&copy; 2023 </small>
+    <small>Create by Boris Kho Nave David&copy; 2023 </small>
     <ul class="social-links flex clean-list">
       <li>
-        <a class="dropbox" href="https://www.dropbox.com/"
-          ><img src="./img/icons/dropbox-color-svg.svg" alt="dropbox logo"
-        /></a>
+        <a class="dropbox" href="https://www.dropbox.com/"><img src="./img/icons/dropbox-color-svg.svg"
+            alt="dropbox logo" /></a>
       </li>
       <li>
-        <a class="githube" href="https://github.com/"
-          ><img src="./img/icons/github-color-svg.svg" alt="github logo"
-        /></a>
+        <a class="githube" href="https://github.com/"><img src="./img/icons/github-color-svg.svg"
+            alt="github logo" /></a>
       </li>
       <li>
-        <a class="google-maps" href="https://www.google.com/maps"
-          ><img src="./img/icons/google-maps-old-svg.svg" alt="github logo"
-        /></a>
+        <a class="google-maps" href="https://www.google.com/maps"><img src="./img/icons/google-maps-old-svg.svg"
+            alt="github logo" /></a>
       </li>
       <li>
-        <a class="weather" href="https://www.israelweather.co.il/sea_real.asp"
-          ><img src="./img/icons/weather-svg.svg" alt="github logo"
-        /></a>
+        <a class="weather" href="https://www.israelweather.co.il/sea_real.asp"><img src="./img/icons/weather-svg.svg"
+            alt="github logo" /></a>
       </li>
     </ul>
   </footer>
 
+  <script src="lib/axios.js"></script>
   <script src="js/main.controller.js" type="module"></script>
 </body>
 

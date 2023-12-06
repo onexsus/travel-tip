@@ -2,7 +2,8 @@ import { locService } from './services/location-services.js'
 import { mapService } from './services/map-services.js'
 
 export const mainController = {
-    onGetLocs
+    onGetLocs,
+    onPanTo
 }
 
 window.onload = onInit
@@ -11,6 +12,7 @@ window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 window.onDeleteLocation = onDeleteLocation
+window.onSearchLocation = onSearchLocation
 
 function onInit() {
     mapService.initMap()
@@ -79,3 +81,11 @@ function onDeleteLocation(posId) {
     if (ans) locService.deleteLocation(posId)
 }
 
+function onSearchLocation(ev) {
+    ev.preventDefault()
+    const value = document.querySelector('input').value
+    locService.searchLocation(value).then(res => {
+        locService.createLocation(res, value)
+        onPanTo(res.lat, res.lng)
+    })
+}
