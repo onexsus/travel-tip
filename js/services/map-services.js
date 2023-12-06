@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service.js'
+// import { storageService } from './async-storage.service.js'
 import { locService } from './location-services.js'
 
 export const mapService = {
@@ -24,7 +24,8 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             })
             gMap.addListener("click", (mapsMouseEvent) => {
                 const position = mapsMouseEvent.latLng.toJSON()
-                locService.createLocation(position, 'selected location :')
+                const name = prompt('Enter a location name')
+                locService.createLocation(position, name)
             })
             console.log('Map!', gMap)
         })

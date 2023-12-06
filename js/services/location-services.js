@@ -1,4 +1,4 @@
-import { storageService } from "./async-storage.service"
+import { storageService } from "./async-storage.service.js"
 
 
 export const locService = {
