@@ -31,8 +31,23 @@ function onAddMarker() {
 function onGetLocs() {
     locService.getLocs()
         .then(locs => {
-            console.log('Locations:', locs)
-            document.querySelector('.locs').innerText = JSON.stringify(locs, null, 2)
+            const elLoc=document.querySelector('.locs')
+            let strHtml=''
+            locs.forEach(pos => {
+                strHtml+=`
+                <div class="card flex space-between">
+                <div class="card-info flex column ">
+                <p>Name:${pos.name}</p>
+                <p>lat:${pos.lat}</p>
+                <p>lng:${pos.lng}</p>
+                </div>
+                <div class="btns-card flex column">
+                <button class="btn-go-card"><img src="./img/icons/travel-svg.svg"></button>
+                <button class="btn-delete-card"><img src="./img/icons/trash-svg.svg"></button>
+                </div>
+                </div>`
+            });
+            elLoc.innerHTML=strHtml
         })
 }
 
