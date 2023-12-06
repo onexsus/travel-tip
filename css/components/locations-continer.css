@@ -1,0 +1,37 @@
+/* locs
+card
+card-info
+btns-card
+btn-go-card
+btn-delete-card */
+
+.locs{
+  width: 400px;
+}
+
+.card{
+  background-color: rgb(243, 174, 84);
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 1em;
+  width: 300px;
+  margin-bottom: 1em;
+  
+}
+
+.card p{
+  padding: 5px;
+  margin: 0;
+}
+
+.btns-card{
+  align-items: end;
+}
+
+.card .btn-go-card,.btn-delete-card{
+  width: 40px;
+  height: 40px;
+}
+.card .btns-card img{
+  width: 100%;
+}
