@@ -12,13 +12,14 @@ const LOCATION_KEY = 'LOCATION_DB'
 
 const locs = [
     { name: 'Greatplace', lat: 32.047104, lng: 34.832384 },
-    { name: 'Neveragain', lat: 32.047201, lng: 34.832581 }
+    { name: 'Neveragain', lat: 32.047201, lng: 34.832581 },
 ]
 
 function getLocs() {
+    let location= storageService.query(LOCATION_KEY).then(res=>res.length===0? locs:res)
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(locs)
+            resolve(location)
         }, 2000)
     })
 }
