@@ -33,6 +33,5 @@ function createLocation(location, name) {
         createAt: Date.now(),
         updatedAt: Date.now()
     }
-    storageService.post(LOCATION_KEY, loc)
-    mainController.onGetLocs()
+    storageService.post(LOCATION_KEY, loc).then(() => mainController.onGetLocs())
 }
