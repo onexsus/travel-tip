@@ -46,7 +46,7 @@ function onGetLocs() {
                 <p>lng:${pos.lng}</p>
                 </div>
                 <div class="btns-card flex column">
-                <button class="btn-go-card"><img src="./img/icons/travel-svg.svg"></button>
+                <button class="btn-go-card" onclick="onPanTo(${pos.lat}, ${pos.lng})"><img src="./img/icons/travel-svg.svg"></button>
                 <button class="btn-delete-card"><img src="./img/icons/trash-svg.svg"></button>
                 </div>
                 </div>`
@@ -66,7 +66,7 @@ function onGetUserPos() {
             console.log('err!!!', err)
         })
 }
-function onPanTo() {
+function onPanTo(lat, lng) {
     console.log('Panning the Map')
-    mapService.panTo(35.6895, 139.6917)
+    mapService.panTo(lat, lng)
 }
