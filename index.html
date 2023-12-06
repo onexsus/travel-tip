@@ -4,14 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" href="./img/travel-favi.png" type="image/x-icon">
   <title>Travel tip</title>
 </head>
 
 <body onload="onInit()" class="main-layout">
+  <header class="main-header flex space-betwwen full">
+    <div class=header-logo><img src="./img/travel-logo.png" alt="travel trip logo"></div>
+    <section class="header-btns-continer flex align-center">
+      <form>
+        <input type="text" name="location" placeholder="">
+        <button class="input-btn">GO</button>
+      </form>
+      <button>My Location</button>
+    </section>
+  </header>
+  <main class="main-coniner">
+    <section class="main-bar-continer">
+      <section class="">
+        <div class="">
+          Location:<span> Central Park ,New York</span>
+        </div>
+        <button class="btn-copy"> Copy Location</button>
+      </section>
 
-  <script src="js/main.js" type="module"></script>
+    </section>
+    <section></section>
+  </main>
+
+  <script src="/js/main.controller.js" type="module"></script>
 </body>
 
 </html>
