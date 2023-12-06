@@ -1,5 +1,5 @@
-import { locService } from 'js/services/location-service.js'
-import { mapService } from 'js/services/map-service.js'
+import { locService } from './services/location-services.js'
+import { mapService } from './services/map-services.js'
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
