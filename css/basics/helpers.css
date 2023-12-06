@@ -1,0 +1,42 @@
+/*  GRID HELPERS */
+.grid {
+  display: grid;
+}
+
+.grid.column {
+  grid-auto-flow: column;
+}
+
+/* FLEX HELPERS */
+.flex {
+  display: flex;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+.flex.justify-center {
+  justify-content: center;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+/* LIST HELPERS */
+
+.clean-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* HELPERS */
+.hide{
+  display: none;
+}

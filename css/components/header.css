@@ -1,0 +1,32 @@
+.main-header {
+  height: 120px;
+  background-color: rgb(110, 0, 0);
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-bottom: 1em;
+}
+.logo{
+  width: 300px;
+}
+.logo img{
+  height: 100px;
+}
+.main-header .search-continer form{
+  display: flex;
+}
+.search-continer .btn-submit{
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-image:url("/img/icons/search-icon.svg") ;
+  background-position: center;
+  background-size: cover;
+}
+.search-continer .btn-submit:hover{
+  background-color: rgb(170, 170, 170);
+}
+.search-continer input{
+  height: 40px;
+  width: 250px;
+
+}
