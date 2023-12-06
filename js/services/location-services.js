@@ -29,6 +29,7 @@ function getLocs() {
 
 
 function createLocation(location, name) {
+    if (!name) return
     var loc = {
         name,
         lat: location.lat,
