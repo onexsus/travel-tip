@@ -32,7 +32,7 @@ function getPosition() {
     })
 }
 
-function onAddMarker({lat, lng}) {
+function onAddMarker({ lat, lng }) {
     console.log('Adding a marker')
     mapService.addMarker({ lat: lat, lng: lng })
 }
@@ -47,7 +47,7 @@ function onGetLocs() {
             console.log(locs[locs.length-1])
             let strHtml = ''
             locs.forEach(pos => {
-                onAddMarker({lat: pos.lat, lng: pos.lng})
+                onAddMarker({ lat: pos.lat, lng: pos.lng })
                 strHtml += `
                 <div class="card flex space-between">
                 <div class="card-info flex column ">
@@ -99,16 +99,16 @@ function onSearchLocation(ev) {
 }
 
 function onCopyUrl() {
-   locService.getLocs().then(res=>{
-    res[res.length-1]
-    const queryParams = `?lat=${res[res.length-1].lat}&lng=${res[res.length-1].lng}`
-    const newUrl =
-    window.location.protocol + "//" +
-    window.location.host +
-    window.location.pathname + queryParams
-    window.history.pushState({ path: newUrl }, '', newUrl)
-    navigator.clipboard.writeText(newUrl)
-})
+    locService.getLocs().then(res => {
+        res[res.length - 1]
+        const queryParams = `?lat=${res[res.length - 1].lat}&lng=${res[res.length - 1].lng}`
+        const newUrl =
+            window.location.protocol + "//" +
+            window.location.host +
+            window.location.pathname + queryParams
+        window.history.pushState({ path: newUrl }, '', newUrl)
+        navigator.clipboard.writeText(newUrl)
+    })
 }
 
 function renderQueryParams() {
@@ -117,8 +117,8 @@ function renderQueryParams() {
         lat: queryParams.get('lat') || 0,
         lng: +queryParams.get('lng') || 0
     }
-     console.log(location.lat,location.lng)
+    console.log(location.lat, location.lng)
     if (!location.lat || !location.lng) return
 
-    onPanTo(location.lat , location.lng)
+    onPanTo(location.lat, location.lng)
 }
