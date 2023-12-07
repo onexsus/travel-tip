@@ -6,7 +6,11 @@ btn-go-card
 btn-delete-card */
 
 .locs{
-  width: 400px;
+  width: 300px;
+}
+.locations-title{
+  font-size: 1.4em;
+  font-weight: 600;
 }
 
 .card{
@@ -23,14 +27,28 @@ btn-delete-card */
   padding: 5px;
   margin: 0;
 }
+.card .card-title{
+  font-weight: 600;
+}
 
 .btns-card{
   align-items: end;
 }
-
+.card .btn-go-card{
+  margin-bottom: 5px;
+}
 .card .btn-go-card,.btn-delete-card{
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 500ms;
+  cursor: pointer;
+}
+.card .btn-go-card:hover{
+  background-color: rgb(243, 205, 155);
+}
+.card .btn-delete-card:hover{
+  background-color: rgb(243, 205, 155);
 }
 .card .btns-card img{
   width: 100%;

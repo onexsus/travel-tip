@@ -12,7 +12,8 @@
 /* COMPONENTS */
 
 @import url("./components/header.css");
-@import url("./components/btns.css");
 @import url("./components/footer.css");
+@import url("./components/main-continer.css");
+@import url("./components/btns.css");
 @import url("./components/locations-continer.css");
 @import url("./setup/mq.css"); 

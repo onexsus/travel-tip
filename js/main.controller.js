@@ -41,21 +41,26 @@ function onGetLocs() {
     locService.getLocs()
         .then(locs => {
             const elLoc = document.querySelector('.locs')
+            const elLastPos=document.querySelector('.last-pos')
+            const lastPos=locs[locs.length-1]
+            elLastPos.innerText=`Name: ${lastPos.name} lat:${lastPos.lat} lng: ${lastPos.lng}`
+            console.log(locs[locs.length-1])
             let strHtml = ''
             locs.forEach(pos => {
                 onAddMarker({lat: pos.lat, lng: pos.lng})
                 strHtml += `
                 <div class="card flex space-between">
                 <div class="card-info flex column ">
-                <p>Name:${pos.name}</p>
-                <p>lat:${pos.lat}</p>
-                <p>lng:${pos.lng}</p>
+                <p><sopn class="card-title">Name:</sopn>${pos.name}</p>
+                <p><sopn class="card-title">lat:</sopn>${pos.lat}</p>
+                <p><sopn class="card-title">lng:</sopn>${pos.lng}</p>
                 </div>
                 <div class="btns-card flex column">
                 <button class="btn-go-card" onclick="onPanTo(${pos.lat}, ${pos.lng})"><img src="./img/icons/travel-svg.svg"></button>
                 <button class="btn-delete-card" onclick="onDeleteLocation('${pos.id}')"><img src="./img/icons/trash-svg.svg"></button>
                 </div>
                 </div>`
+
             });
             elLoc.innerHTML = strHtml
         })

@@ -20,28 +20,33 @@
       <button class="btn-header-location" onclick="onGetUserPos()">My Location</button>
     </section>
   </header>
-  <main class="main-coniner">
+  <main class="main-continer">
+    <section class="map-continer">
     <div id="map" style="width: 100%; height: 400px;"></div>
-    <section class="main-bar-continer">
+    <section class="main-loc-continer">
+      <div class="your-pos"><p>You are at: <span class="user-pos"></span></p></div>
       <section class="second-header flex space-between">
-        <div class="loctin-position ">
-          <span class="location-title">Location:</span><span> Central Park ,New York</span>
+        <div class="loctin-position">
+          <div class="location-title">Last Saved Location:</div><span class="last-pos"> </span>
         </div>
         <button class="btn-copy" onclick="onCopyUrl()"> Copy Location</button>
       </section>
     </section>
-    <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo(35.6895, 139.6917)" class="btn-pan">Pan Map to Tokyo</button>
-
-    <p>You are at: <span class="user-pos"></span></p>
-    <h2>Locations:
-    </h2>
-    <section class="locs">
-
-    </section>
-    <section>
-    </section>
+    <div class="btns-go-to flex align-center space-between">
+      <button onclick="onPanTo(35.6895, 139.6917)" class="btn-pan Tokyo"></button>
+      <button onclick="onPanTo(36.17100870115893, (-115.1391009))" class="btn-pan usa"></button>
+      <button onclick="onPanTo(43.653226, (-79.3831843))" class="btn-pan canada"></button>
+    </div>
+  </section>
+    <div class="locations-continer flex">
+      <div class="header-loc flex space-between align-center">
+        <div class="locations-title ">Locations
+        </div>
+          <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+      </div>
+      <section class="locs">
+      </section>
+    </div>
   </main>
   <footer class=" main-footer full flex column align-center">
     <div class="logo-footer">

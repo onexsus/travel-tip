@@ -1,0 +1,118 @@
+.main-continer{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+.main-continer .map-continer{
+  grid-column:2;
+  margin-left: 10px;
+  background-color: rgb(167, 94, 0);
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 10px;
+  margin-bottom: 2em;
+}
+.main-continer .locations-continer{
+  border: 1px solid black;
+  background-color: rgb(167, 94, 0);
+  border-radius: 1em;
+  grid-column:1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  box-shadow: -16px 18px 23px -6px rgba(0,0,0,0.47);
+-webkit-box-shadow: -16px 18px 23px -6px rgba(0,0,0,0.47);
+-moz-box-shadow: -16px 18px 23px -6px rgba(0,0,0,0.47);
+  
+}
+.map-continer .last-pos{
+  font-size: 1em;
+  font-weight: 500;
+}
+.main-continer .locations-continer .btn-get-locs{
+  cursor: pointer;
+ padding: 10px;
+ font-size: 1em;
+ font-weight: 600;
+ border-radius: 1em;
+ background-color: rgb(231, 139, 19);
+ transition: all 500ms;
+}
+.main-continer .locations-continer .btn-get-locs:hover{
+ 
+ background-color: rgb(245, 186, 109);
+}
+.header-loc{
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 1em;
+
+}
+.main-continer .your-pos{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.main-continer .your-pos .user-pos{
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.map-continer .second-header{
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.map-continer .second-header .btn-copy{
+  font-size: 0.8em;
+  padding: 5px;
+  font-weight: 600;
+  border-radius: 1em;
+ background-color: rgb(231, 139, 19);
+ transition: all 500ms;
+ cursor: pointer;
+}
+.main-continer .second-header .btn-copy:hover{
+ 
+  background-color: rgb(245, 186, 109);
+ }
+.map-continer #map{
+  border-top-right-radius:0.8em ;
+  border-top-left-radius: 0.8em;
+}
+
+.btns-go-to .btn-pan{
+  width: 150px;
+  height: 80px;
+  font-size: 1em;
+  font-weight: 900;
+  cursor: pointer;
+}
+.btns-go-to .Tokyo{
+  background: url("../../img/icons/japan-svg.svg");
+  background-position: center;
+  background-size: cover;
+  
+}
+.btns-go-to .usa{
+  background: url("../../img/icons/usa-svg.svg");
+  background-position: center;
+  background-size: cover;
+}
+.btns-go-to .canada{
+  background: url("../../img/icons/canada-svg.svg");
+  background-position: center;
+  background-size: cover;
+}
+.btns-go-to .Tokyo:hover{
+opacity: 0.8;
+}
+.btns-go-to .usa:hover{
+  opacity: 0.8;
+}
+.btns-go-to .canada:hover{
+  opacity: 0.8;
+}
